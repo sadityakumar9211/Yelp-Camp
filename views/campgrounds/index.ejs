@@ -1,0 +1,29 @@
+<!-- The below line of code injects the content of the file proceeding it into the specified file relative to views directory -->
+<% layout('layout/boilerplate') %>
+
+    <h1>All Campgrounds</h1>
+    <h4><a href="/campgrounds/new">Add Campground</a></h4>
+
+    <% for(let campground of campgrounds) {%>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="<%=campground.image%> " alt="" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%=campground.title %>
+                        </h5>
+                        <div class="card-text">
+                            <%=campground.description%>
+                        </div>
+                        <div class="card-text mt-1">
+                            <div class="small text-muted"><%=campground.location%> </div>
+                        </div>
+                        <a class="btn btn-primary mt-1" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
