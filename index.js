@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== "production") {
 const express = require('express')
 const app = express()
 const path = require('path')
-const port = 3000
 const mongoose = require('mongoose')
 const ejsMate = require('ejs-mate')      //One of many engines which are used to parse and make sense of ejs
 const methodOverride = require('method-override')
@@ -159,7 +158,7 @@ app.use((err, req, res, next) => {
     res.status(status).render('error', { err })
 })
 
-
+const port = process.env.PORT || 3000
 app.listen(port, () => {
-    console.log('Serving at port 3000...')
+    console.log(`Serving at port ${port}...`)
 })
