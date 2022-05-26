@@ -37,7 +37,7 @@ map.on('load', () => {
             'circle-color': [
                 'step',
                 ['get', 'point_count'],
-                '#3a86ff',
+                '#9b5de5',
                 30,
                 '#ffbe0b',
                 60,
